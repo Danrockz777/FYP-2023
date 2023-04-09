@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./RegisterLoginStyle.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="navbar">
+        
+        <a href="ContactUs.html"><i class="fa-sharp fa-solid fa-envelope"></i>&nbspContact Admin</a>
+       
+      </div>
+    <div class="main-parent">
+        <div class="form-wrap">
+            <form  method="post">
+                
+                <h1><span>Login</span>Form</h1>
+                <div class="single-input">
+                    <input id="emailAddress"  type="email" placeholder="Email Address" required>
+                </div>
+                <div class="single-input">
+                    <input id="passWord" type="password" placeholder="Password" required>
+                </div>
+                <div class="submit-button ">
+                    <button class="button login">Login</button>
+                </div>
+                <div class="account-have">
+                   
+                    <script type="text/javascript">
+                        function AlertIt() {
+                        
+                            Swal.fire({
+  title: 'Forgot Password!',
+  text: 'Please Create a New Account',
+  icon: 'question',
+  confirmButtonText: 'Okay, sure !'
+})
+                        }
+                        </script>
+                        
+                        <a href="javascript:AlertIt();">Forgot Password &nbsp;</a>
+
+                        
+                    <a href="RegisterPage.html">&nbsp; Create new account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./sweetalert.js"></script>
+    <script src="./RegisterLogin.js"></script>
+</body>
+</html>

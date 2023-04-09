@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custome css  -->
+    <link rel="stylesheet" href="./RegisterLoginStyle.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="main-parent">
+        <div class="form-wrap">
+            <form  method="post">
+                <h1><span>Registration</span>Form</h1>
+                <div class="single-input">
+                    <input  id="fname" type="text" placeholder="First name" required>
+                </div>
+                <div class="single-input">
+                    <input  id="lname" type="text" placeholder="Last name" required>
+                </div>
+                <div class="single-input">
+                    <input  id="email" type="email" placeholder="Email Address" required>
+                </div>
+                <div class="single-input">
+                    <input  id="pass" type="password" placeholder="Password" required>
+                </div>
+                <div class="single-input">
+                    <input  id="cpass" type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="submit-button">
+                    <button class="button" type="submit" >Submit</button>
+                </div>
+                <div class="account-have">
+                    
+             <!--        <script type="text/javascript">
+                        function AlertIt() {
+                        
+                            Swal.fire({
+  title: 'Forgot Password!',
+  text: 'Please Contact Admin to Reset Password',
+  icon: 'warning',
+  confirmButtonText: 'Okay, sure !'
+})
+                        }
+                        </script>
+                        
+                        <a href="javascript:AlertIt();">Forgot Password</a> -->
+
+
+                    <a href="Login.html"  >Have an account ? Login</a>
+                </div>
+                <br>
+                <ul class="helper-text">
+                    <li class="length">Must be at least 8 characters long.</li>
+                    <li class="lowercase">Must contain a lowercase letter.</li>
+                    <li class="uppercase">Must contain an uppercase letter.</li>
+                   
+                </ul>
+            </form>
+        </div>
+    </div>
+    <script src="./sweetalert.js"></script>
+    <script src="./RegisterLogin.js"></script>
+</body>
+</html>

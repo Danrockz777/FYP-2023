@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="Admin.css">
+    
+     <!-- script copied from email.js -->
+     <script type="text/javascript"
+     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+   emailjs.init("IBiXvi9ouUYkbunMt");
+})();
+</script>
+
+
+
+</head>
+    <script src="Admin.js"></script>
+<body>
+
+    
+<div class="navbar">
+    <a class="active" href="Admin.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    <!-- <a href="#"><i class="fa-sharp fa-solid fa-key"></i> Reset Password</a> -->
+    <a href="LogoutAdmin.html" ><i class="fa fa-fw fa-user"></i> Logout</a>
+  </div>
+    <div class="container">
+    
+    <h2 class="mt-5 mb-5">Admin Panel for INTI University Sports Facility Management</h2>
+    
+        <div class="mb-5">
+            <div class=" row" >
+                <div class="form-group col-md-6 mb-3">
+                    <label for="name">Name :</1abe1>
+                    <input
+                        type="text"
+                        name=" name"
+                        class="form-control"
+                        id="name"
+                        placeholder="Enter Name"/>
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="age" >Age :</1abe1>
+            <input
+                type="number"
+                name="age"
+                class="form-control"
+                id="age"
+                placeholder="Enter Age"
+        />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="idNumber" >ID Number :</1abe1>
+            <input
+                type="text"
+                name="idNumber"
+                class="form-control"
+                id="idNumber"
+                placeholder="Enter Your ID Number"
+        />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="email" >Email :</1abe1>
+            <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter Your Email"
+        />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="tel" >Phone Number :</1abe1>
+                <br>
+            <!-- <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter Your Email"
+        /> -->
+                
+
+            <input 
+        style="color: black;"
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            placeholder="Ex : 011-63816387" 
+            pattern="[0-9]{3}-[0-9]{8}" required 
+            />    
+
+        </div>
+        <!-- To date Date and Time Picker Here -->
+        <div class="form-group col-md-6 mb-3">
+            <label for="startTime" >Start Time :</1abe1>
+            <input
+                type="time"
+                name="startTime"
+                class="form-control"
+                id="startTime"
+                placeholder="Choose Start Time"
+                min="07:00" 
+                max="22:00"
+                required
+        />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="endTime" >End Time :</1abe1>
+            <input
+                type="time"
+                name="endTime"
+                class="form-control"
+                id="endTime"
+                placeholder="Choose End Time"
+        />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="chosenDate" >Choose Date :</1abe1>
+            <input
+                type="date"
+                name="chosenDate"
+                class="form-control"
+                id="chosenDate"
+                placeholder="Choose Date"
+        />
+        </div>
+        <div class="form-group col-md-6 mb-3">
+            <label for="facility" >Select Sports Facility :</1abe1>
+                <br>
+                <select name="facility" id="facility" style="background-color: #3498DB;color: black;"">
+                    <option value="Badminton Court">Badminton Court</option>
+                    <option value="Swimming Pool" >Swimming Pool</option>
+                    <option value="Squash Court">Squash Court</option>
+                    <option value="Futsal Court">Futsal Court</option>
+                    <option value="Basketball Court">Basketball Court</option>
+                    <option value="Football Field">Football Field</option>
+                    
+                  </select>
+            <!-- <input
+                type="date"
+                name="chosendate"
+                class="form-control"
+                id="chosendate"
+                placeholder="Choose Date"
+        /> -->
+        </div>
+        
+
+
+
+        <!-- End line for Date and Time AND faculty-->
+            <div class="col-lg-12 mt-5">
+            <button class="btn btn-success" id="Submit" onclick="AddData()">
+            Add Data
+            </button>
+            <button class="btn btn-primary" id="Update" >
+            Update
+            </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-5">
+        <div class="col-12">
+            <table class="table table-bordered" id="crudTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>ID Number</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Date</th>
+                        <th>Sports Facility</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <h4 class="mt-5 mb-5">Upload Payment Proof for Booking</h4>
+ 
+    <div class="form-group col-md-6 mb-3">
+        <input type="file" id ="myFileInput">
+    </div>
+    
+       <!-- save file to localstorage -->
+        <script>
+            document.querySelector('#myFileInput').addEventListener("change",function(){
+                //console.log(this.files);
+                const reader=new FileReader();
+                reader.addEventListener("load",()=>{
+                    console.log(reader.result);
+                    localStorage.setItem("recent-image",reader.result);
+                });
+                reader.readAsDataURL(this.files[0]);
+            });
+            // Load html file upon page refresh
+            document.addEventListener("DOMContentLoaded",()=>{
+                const recentImageDataURL=localStorage.getItem("recent-image");
+    
+                if(recentImageDataURL){
+                    document.querySelector('#imgPreview').setAttribute("src",recentImageDataURL);
+                }
+            });
+        </script>
+        <br>
+        <div class="form-group ">
+         <img id="imgPreview" src="" style="width:500px;height:500px;border: 5px solid #555; max-width: 100%;
+         height: auto;"></div>
+
+
+</div>
+<br>
+<br>
+
+
+
+
+</div>
+<script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="Admin.js"></script>
+    <script src="./sweetalert.js"></script>
+    
+    
+</body>
+</html>
